@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cells:
   - {fileID: 5898482464723096790, guid: ade9183b834b92740857ced5e9c11794, type: 3}
-  prices: 01000000
+  prices: 05000000
 --- !u!1001 &1998325600279223050
 PrefabInstance:
   m_ObjectHideFlags: 0
