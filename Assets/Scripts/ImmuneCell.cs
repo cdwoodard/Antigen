@@ -13,6 +13,10 @@ public class ImmuneCell : MonoBehaviour {
 
     public bool followMouse = false; //for placing new cells down
 
+    public SpriteRenderer spriteRenderer;
+
+    public Sprite explodedSprite; // sprite appearance that the white blood cell should change to once it explodes
+
     public Vector2 pos {
         get
         {
@@ -23,7 +27,12 @@ public class ImmuneCell : MonoBehaviour {
             this.transform.position = value;
         }
     }
-    
+
+    void Start()
+    {
+        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+    }
+
     // Update is called once per frame
     public virtual void Update() {
         if(followMouse){
@@ -35,6 +44,11 @@ public class ImmuneCell : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+    }
+
+    void SwitchSprite()
+    {
+        spriteRenderer.sprite = explodedSprite;
     }
 
     public virtual void Move(){
@@ -51,6 +65,7 @@ public class ImmuneCell : MonoBehaviour {
             } else { //if already nearby, attack 
                 if(attackReady(lastAttackTime)){
                     Pathogen p = target.GetComponent<Pathogen>();
+                    SwitchSprite();
                     p.Attacked();
                     lastAttackTime = Time.time;
                 }
@@ -58,6 +73,7 @@ public class ImmuneCell : MonoBehaviour {
             }
         }
     }
+
 
     public GameObject FindClosestPathogen()
     {

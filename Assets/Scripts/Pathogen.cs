@@ -11,6 +11,10 @@ public class Pathogen : MonoBehaviour {
 
     public float lastAttackTime = 0; //for tracking attack frequency
 
+    public Encyclopedia Encyclopedia;
+
+    public SpriteRenderer spriteRenderer;
+
     public Vector2 pos {
         get
         {
@@ -22,12 +26,19 @@ public class Pathogen : MonoBehaviour {
         }
     }
 
+    private void Start()
+    {
+        GameObject e = GameObject.FindGameObjectWithTag("Encyclopedia");
+        Encyclopedia = e.GetComponent<Encyclopedia>();
+    }
+
     // Update is called once per frame
     void Update() {
         Move();
 
         if(health < 1){
-            Destroy(gameObject);
+            Encyclopedia.SwitchSprite();
+            Destroy(gameObject); // death
         }
     }
 
