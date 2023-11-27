@@ -13,7 +13,10 @@ public class Purchase : MonoBehaviour {
     }
 
     public void OnMouseOver(){
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
+            // helps users with macs, where difference between middle click and left cick is blurred
+        {
+            print("clicking");
             if(Main.chemokines >= cost){
                 Main.chemokineIncrement(cost * -1);
                 //create new immune cell

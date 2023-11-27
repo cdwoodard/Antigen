@@ -93,6 +93,9 @@ public class Pathogen : MonoBehaviour {
 
     public virtual void Attacked() {
         health--;
+        var trans = 0.5f;
+        var col = gameObject.GetComponent<Renderer>().material.color;
+        col.a = trans;
     }
 
 }

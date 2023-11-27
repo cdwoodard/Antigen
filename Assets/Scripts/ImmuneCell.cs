@@ -17,6 +17,9 @@ public class ImmuneCell : MonoBehaviour {
 
     public Sprite explodedSprite; // sprite appearance that the white blood cell should change to once it explodes
 
+    public Vector3 doubleSize;
+
+
     public Vector2 pos {
         get
         {
@@ -31,6 +34,11 @@ public class ImmuneCell : MonoBehaviour {
     void Start()
     {
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+        doubleSize = this.transform.localScale * 1.2f;
+        doubleSize.x *= 1.3f;
+        doubleSize.y *= 1.3f;
+        doubleSize.z *= 1.3f;
+
     }
 
     // Update is called once per frame
@@ -40,7 +48,7 @@ public class ImmuneCell : MonoBehaviour {
         } else {
             Move();
 
-            if(health < 1){
+            if (health < 1){
                 Destroy(gameObject);
             }
         }
@@ -49,6 +57,14 @@ public class ImmuneCell : MonoBehaviour {
     void SwitchSprite()
     {
         spriteRenderer.sprite = explodedSprite;
+        if (this.transform.localScale.x < doubleSize.x && this.transform.localScale.y < doubleSize.y && this.transform.localScale.z < doubleSize.z)
+        {
+            Vector3 v = this.transform.localScale;
+            v.x *= 1.3f;
+            v.y *= 1.3f;
+            v.z *= 1.3f;
+            this.transform.localScale = v;
+        }
     }
 
     public virtual void Move(){

@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 1561391308}
   - component: {fileID: 1561391307}
   - component: {fileID: 1561391306}
-  - component: {fileID: 1561391305}
+  - component: {fileID: 1561391309}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -651,21 +651,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1090, y: -960}
   m_SizeDelta: {x: 500, y: 530}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1561391305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561391303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea82f2f2ce46c4a4e939d9a9f58d86f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PausePanel: {fileID: 0}
-  PausedMessage: {fileID: 0}
-  UnPauseButton: {fileID: 0}
 --- !u!114 &1561391306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,9 +695,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1561391305}
-        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
-        m_MethodName: PauseTheGame
+      - m_Target: {fileID: 1561391309}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: SwitchToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -760,6 +745,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561391303}
   m_CullTransparentMesh: 1
+--- !u!114 &1561391309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561391303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e0a8e7cd8f045dca3ee799f398d9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1602228857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 836214256992481139, guid: 5bf2b62254ca44f2a9b19938556d1a07, type: 3}
