@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Immune
   - Pathogen
+  - Encyclopedia
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - Epidermal
   - Immune
   - Pathogen
-  - 
-  - 
-  - 
+  - Background
+  - Pause_Panel
+  - Pause_Button
   - 
   - 
   - 
@@ -42,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1751264019
+    locked: 0
+  - name: Pathogen
+    uniqueID: 3535168241
+    locked: 0
+  - name: Immune
+    uniqueID: 1979206041
+    locked: 0
+  - name: Pause_Panel
+    uniqueID: 4149346157
+    locked: 0
+  - name: Pause_Button
+    uniqueID: 401886659
     locked: 0

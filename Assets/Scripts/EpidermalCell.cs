@@ -23,7 +23,7 @@ public class EpidermalCell : ImmuneCell {
         health = maxHealth; //overrides default health value
         Main.epidermalCells.Add(gameObject);
         mode = option.generate;
-        GetComponent<SpriteRenderer>().color = Color.magenta;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     public override void Update(){
