@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Pathogen : MonoBehaviour {
 
+    public string type;
+    public Sprite image;
     public int health = 10;
     public float speed = 1f;
 
     public float attackSpeed = 1f; //attacks every 1 second
 
     public float lastAttackTime = 0; //for tracking attack frequency
-
-    public Encyclopedia Encyclopedia;
 
     public SpriteRenderer spriteRenderer;
 
@@ -26,18 +26,11 @@ public class Pathogen : MonoBehaviour {
         }
     }
 
-    private void Start()
-    {
-        GameObject e = GameObject.FindGameObjectWithTag("Encyclopedia");
-        Encyclopedia = e.GetComponent<Encyclopedia>();
-    }
-
     // Update is called once per frame
     void Update() {
         Move();
 
         if(health < 1){
-            Encyclopedia.SwitchSprite();
             Destroy(gameObject); // death
         }
     }
@@ -49,7 +42,7 @@ public class Pathogen : MonoBehaviour {
         //makes sure target exists
         if (target != null){
             Vector2 targetPos = target.transform.position;
-            if((targetPos - pos).sqrMagnitude > 1){
+            if((targetPos - pos).sqrMagnitude > 1.5){
                 //set step amount according to speed
                 var step = Time.deltaTime * speed;
                 pos = Vector2.MoveTowards(tempPos, targetPos, step);

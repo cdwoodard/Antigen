@@ -33,11 +33,11 @@ public class ImmuneCell : MonoBehaviour {
 
     void Start()
     {
-        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-        doubleSize = this.transform.localScale * 1.2f;
-        doubleSize.x *= 1.3f;
-        doubleSize.y *= 1.3f;
-        doubleSize.z *= 1.3f;
+        // spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+        // doubleSize = this.transform.localScale * 1.2f;
+        // doubleSize.x *= 1.3f;
+        // doubleSize.y *= 1.3f;
+        // doubleSize.z *= 1.3f;
 
     }
 
@@ -57,14 +57,14 @@ public class ImmuneCell : MonoBehaviour {
     void SwitchSprite()
     {
         spriteRenderer.sprite = explodedSprite;
-        if (this.transform.localScale.x < doubleSize.x && this.transform.localScale.y < doubleSize.y && this.transform.localScale.z < doubleSize.z)
-        {
-            Vector3 v = this.transform.localScale;
-            v.x *= 1.3f;
-            v.y *= 1.3f;
-            v.z *= 1.3f;
-            this.transform.localScale = v;
-        }
+        // if (this.transform.localScale.x < doubleSize.x && this.transform.localScale.y < doubleSize.y && this.transform.localScale.z < doubleSize.z)
+        // {
+        //     Vector3 v = this.transform.localScale;
+        //     v.x *= 1.3f;
+        //     v.y *= 1.3f;
+        //     v.z *= 1.3f;
+        //     this.transform.localScale = v;
+        // }
     }
 
     public virtual void Move(){
@@ -74,14 +74,14 @@ public class ImmuneCell : MonoBehaviour {
         //makes sure target exists
         if (target != null){
             Vector2 targetPos = target.transform.position;
-            if((targetPos - pos).sqrMagnitude > 1){
+            if((targetPos - pos).sqrMagnitude > 1.7){
                 //set step amount according to speed
                 var step = Time.deltaTime * speed;
                 pos = Vector2.MoveTowards(tempPos, targetPos, step);
             } else { //if already nearby, attack 
                 if(attackReady(lastAttackTime)){
                     Pathogen p = target.GetComponent<Pathogen>();
-                    SwitchSprite();
+                    //SwitchSprite();
                     p.Attacked();
                     lastAttackTime = Time.time;
                 }

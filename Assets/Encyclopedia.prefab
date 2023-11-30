@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7654148358715038926}
   m_Layer: 0
   m_Name: Encyclopedia
-  m_TagString: Untagged
+  m_TagString: Encyclopedia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 087c366967f7446888ad12c997889b25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e53f86dcbe2404cd8b456079ca3d5278, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,3 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537db4faa3a264f9d85ca122b58bc0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  updatedEncyclopedia: {fileID: 21300000, guid: da95a374a2b0d48f9b7fe1f541e5303d, type: 3}

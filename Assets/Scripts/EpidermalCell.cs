@@ -40,7 +40,7 @@ public class EpidermalCell : ImmuneCell {
 
                 //check if position already has epidermal cell
                 var checkNum = 0;
-                while (checkIfOccupied(newPos) && checkNum < 6){
+                while (checkIfOccupied(newPos) && checkNum <= 6){
                     //if every option has been tried, exit dupe mode
                     hex++;
                     if (hex > 6) hex = 0;
@@ -49,7 +49,7 @@ public class EpidermalCell : ImmuneCell {
                     checkNum++;
                 }
 
-                if(checkNum < 6){
+                if(checkNum <= 6){
                     GameObject go = Instantiate<GameObject>(duplicate);
                     // Set the initial position for the spawned Enemy
                     go.transform.position = newPos;
@@ -90,7 +90,7 @@ public class EpidermalCell : ImmuneCell {
     public void swapMode(){
         if (mode == option.reproduce){
             mode = option.generate;
-            GetComponent<SpriteRenderer>().color = Color.magenta;
+            GetComponent<SpriteRenderer>().color = Color.white;
         } else {
             mode = option.reproduce;
             reproduceStartTime = Time.time;

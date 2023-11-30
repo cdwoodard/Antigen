@@ -8,7 +8,6 @@ public class Purchase : MonoBehaviour {
     public GameObject type;
     public int cost;
     public void Start(){
-        
         cost = Main.priceMap[type];
     }
 
@@ -17,6 +16,7 @@ public class Purchase : MonoBehaviour {
             // helps users with macs, where difference between middle click and left cick is blurred
         {
             print("clicking");
+            cost = Main.priceMap[type];
             if(Main.chemokines >= cost){
                 Main.chemokineIncrement(cost * -1);
                 //create new immune cell
