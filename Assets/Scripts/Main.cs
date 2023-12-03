@@ -21,6 +21,8 @@ public class Main : MonoBehaviour {
     public int[] prices;
 
     [Header("Dynamic")]
+
+    public static bool unlockedTCells = false;
     public int numOfPathogen = 0;
     public GameObject[] epidermalArray;
     public static GameObject[] pathogenArray;
@@ -35,18 +37,31 @@ public class Main : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         S = this;
+        //set (or reset) some starting variables
         chemokines = 0;
+        unlockedTCells = false;
+        
         S.UpdateGUI();
         for(int i = 0; i < cells.Length; i++){
-            priceMap.Add(cells[i], prices[i]);
+            if(!priceMap.ContainsKey(cells[i])){
+                priceMap.Add(cells[i], prices[i]);
+            }
         }
-        Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
-        numOfPathogen++;
+
+        Scene scene = SceneManager.GetActiveScene();
+
+        if(scene.name != "Menu"){
+            Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
+            numOfPathogen++;
+        }
     }
 
     void Update(){
         epidermalArray = GameObject.FindGameObjectsWithTag("Epidermal");
-        if(epidermalArray.Length == 0){
+        
+        Scene scene = SceneManager.GetActiveScene();
+
+        if(epidermalArray.Length == 0 && scene.name != "Menu"){
             DelayedRestart();
         }
     }
@@ -58,9 +73,10 @@ public class Main : MonoBehaviour {
             //Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
             return;
         }
-        else{
+        else {
             // Pick a random Pathogen to instantiate
-            int ndx = Random.Range(0, prefabPathogens.Length);
+            
+            int ndx = Random.Range(0, prefabPathogens.Length - 1);
             GameObject go = Instantiate<GameObject>(prefabPathogens[ndx]);
 
             // Put the pathogen in a random y position at the right of the screen
@@ -82,8 +98,11 @@ public class Main : MonoBehaviour {
     }
 
     void UpdateGUI() {
-        // Show the data in the GUITexts
-        uitChemokines.text = "C: " + chemokines;
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "Menu"){
+            // Show the data in the GUITexts
+            uitChemokines.text = "C: " + chemokines;
+        }
     }
 
     public static void chemokineIncrement(int incAmount){
@@ -104,13 +123,14 @@ public class Main : MonoBehaviour {
     void Restart()
     {
         // Reload the original scene
-        SceneManager.LoadScene("Leveln"); 
+        SceneManager.LoadScene("Leveln");
     }
 
     void Advance() //advance to the next level
     {
         // Reload the original scene
-        SceneManager.LoadScene("Leveln+1"); 
+        SceneManager.LoadScene("Leveln+1");
+
     }
 
     static public void NoEpidermalCells()

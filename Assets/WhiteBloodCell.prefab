@@ -163,9 +163,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 0.5
-  attackSpeed: 0.01
+  attackSpeed: 0
   lastAttackTime: 0
   followMouse: 0
   spriteRenderer: {fileID: 0}
-  explodedSprite: {fileID: 0}
+  explodedSprite: {fileID: 21300000, guid: 900e2a5be5f364224b88d33c959b89bb, type: 3}
   doubleSize: {x: 0, y: 0, z: 0}

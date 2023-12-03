@@ -11,6 +11,8 @@ public class EpidermalCell : ImmuneCell {
 
     public GameObject duplicate;
 
+    public int epidermalIndex;
+
     //two types of actions an ec can take
     public enum option {
         generate,
@@ -21,6 +23,7 @@ public class EpidermalCell : ImmuneCell {
 
     public void Start(){
         health = maxHealth; //overrides default health value
+        epidermalIndex =  Main.epidermalCells.Count;
         Main.epidermalCells.Add(gameObject);
         mode = option.generate;
         GetComponent<SpriteRenderer>().color = Color.white;
@@ -29,6 +32,8 @@ public class EpidermalCell : ImmuneCell {
     public override void Update(){
         if(health < 1){
             Destroy(gameObject);
+            //prevents this cell from being referenced in the epidermal cell list
+            Main.epidermalCells[epidermalIndex] = null; //not the best system, but works
         }
         if(mode == option.reproduce){
             if(Time.time >= reproduceStartTime + reproduceTime){
@@ -78,8 +83,10 @@ public class EpidermalCell : ImmuneCell {
     //checks through all epidermal cells to see if one is in the position given
     public bool checkIfOccupied(Vector3 newPos){
         for(int i = 0; i < Main.epidermalCells.Count; i++){
-            if (Vector3.Distance(Main.epidermalCells[i].transform.position, newPos) < 0.5){
-                return true;
+            if(Main.epidermalCells[i] != null){ //make sure not a previously deleted index
+                if (Vector3.Distance(Main.epidermalCells[i].transform.position, newPos) < 0.5){
+                    return true;
+                }
             }
         }
         return false;

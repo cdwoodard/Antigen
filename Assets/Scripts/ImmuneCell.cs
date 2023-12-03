@@ -33,7 +33,7 @@ public class ImmuneCell : MonoBehaviour {
 
     void Start()
     {
-        // spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         // doubleSize = this.transform.localScale * 1.2f;
         // doubleSize.x *= 1.3f;
         // doubleSize.y *= 1.3f;
@@ -69,6 +69,7 @@ public class ImmuneCell : MonoBehaviour {
         //     v.z *= 1.3f;
         //     this.transform.localScale = v;
         // }
+        health = 0;
     }
 
     public virtual void Move(){
@@ -85,8 +86,8 @@ public class ImmuneCell : MonoBehaviour {
             } else { //if already nearby, attack 
                 if(attackReady(lastAttackTime)){
                     Pathogen p = target.GetComponent<Pathogen>();
-                    //SwitchSprite();
-                    p.Attacked();
+                    SwitchSprite();
+                    p.Attacked(5);
                     lastAttackTime = Time.time;
                 }
                 

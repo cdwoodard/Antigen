@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Purchase : MonoBehaviour {
 
+    public bool needsUnlock; //varies by type, manually set
+
     //index in Main.prices of what cell can be bought
     public GameObject type;
     public int cost;
@@ -17,14 +19,19 @@ public class Purchase : MonoBehaviour {
         {
             print("clicking");
             cost = Main.priceMap[type];
-            if(Main.chemokines >= cost){
+            if(Main.chemokines >= cost && (Main.unlockedTCells || !needsUnlock)){
                 Main.chemokineIncrement(cost * -1);
-                //create new immune cell
-                GameObject go = Instantiate<GameObject>(type);
-                //prevent collisions before being placed
-                go.layer = 5;
-                //follow the mouse until placed
-                go.GetComponent<ImmuneCell>().followMouse = true;
+                if(type != null){
+                    //create new immune cell
+                    GameObject go = Instantiate<GameObject>(type);
+                    //prevent collisions before being placed
+                    go.layer = 5;
+                    //follow the mouse until placed
+                    go.GetComponent<ImmuneCell>().followMouse = true;
+                } else {
+                    Main.unlockedTCells = true;
+                    Destroy(gameObject);
+                }
             }
         }
     }

@@ -169,7 +169,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   explodedSprite: {fileID: 0}
   doubleSize: {x: 0, y: 0, z: 0}
-  maxHealth: 200
+  maxHealth: 100
   reproduceTime: 5
   reproduceStartTime: 0
   duplicate: {fileID: 8373069986593578917}
