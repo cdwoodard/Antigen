@@ -233,11 +233,15 @@ MonoBehaviour:
   prefabPathogens:
   - {fileID: 5042700968136054458, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
   - {fileID: 422606996588207115, guid: 8069c3c1a7da7dd42aa5d706b7cf0d30, type: 3}
-  pathogenSpawnPerSecond: 0.5
+  maxPathogens: 3
+  delayBetweenPathogen: 1
+  gameRestartDelay: 2
   cells:
   - {fileID: 5898482464723096790, guid: ade9183b834b92740857ced5e9c11794, type: 3}
   - {fileID: 8017332293027129634, guid: db87b9aeed89ec64492fdfba6797b61a, type: 3}
   prices: 0100000001000000
+  numOfPathogen: 0
+  epidermalArray: []
 --- !u!1 &553406541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1016,10 @@ PrefabInstance:
     - target: {fileID: 674281394246227835, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795160777811656524, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
+      propertyPath: maxHealth
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8373069986593578917, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
       propertyPath: m_Name

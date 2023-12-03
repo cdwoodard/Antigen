@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3795160777811656524}
   m_Layer: 6
   m_Name: Epidermal Cell
-  m_TagString: Immune
+  m_TagString: Epidermal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
