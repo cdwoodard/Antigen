@@ -7,6 +7,7 @@ TagManager:
   - Immune
   - Pathogen
   - Encyclopedia
+  - Epidermal
   layers:
   - Default
   - TransparentFX

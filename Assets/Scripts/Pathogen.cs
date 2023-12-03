@@ -37,7 +37,7 @@ public class Pathogen : MonoBehaviour {
 
     public virtual void Move(){
         Vector2 tempPos = pos;
-        GameObject target = FindClosestImmuneCell();
+        GameObject target = FindClosestEpidermalCell();
         
         //makes sure target exists
         if (target != null){
@@ -57,10 +57,10 @@ public class Pathogen : MonoBehaviour {
         }
     }
 
-    public GameObject FindClosestImmuneCell()
+    public GameObject FindClosestEpidermalCell()
     {
         GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("Immune");
+        gos = GameObject.FindGameObjectsWithTag("Epidermal");
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;

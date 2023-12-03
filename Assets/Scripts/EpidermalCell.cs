@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EpidermalCell : ImmuneCell {
 
-    public int maxHealth = 200;
+    public int maxHealth = 10;
 
     public float reproduceTime = 5; //time in seconds to duplicate
     public float reproduceStartTime;
@@ -30,7 +30,6 @@ public class EpidermalCell : ImmuneCell {
         if(health < 1){
             Destroy(gameObject);
         }
-
         if(mode == option.reproduce){
             if(Time.time >= reproduceStartTime + reproduceTime){
                 //duplicate in one of six directions (if no epidermal cell there)

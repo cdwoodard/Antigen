@@ -52,6 +52,10 @@ public class ImmuneCell : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+        int num = Main.checkPathogenNum();
+        if(num == 0){
+            Main.NoPathogens();
+        }
     }
 
     void SwitchSprite()
@@ -89,7 +93,6 @@ public class ImmuneCell : MonoBehaviour {
             }
         }
     }
-
 
     public GameObject FindClosestPathogen()
     {

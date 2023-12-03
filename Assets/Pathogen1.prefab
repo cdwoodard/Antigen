@@ -161,9 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9c5288c541b524b9c22dc33e05c94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 
+  image: {fileID: 0}
   health: 10
   speed: 1
   attackSpeed: 1
   lastAttackTime: 0
-  Encyclopedia: {fileID: 0}
   spriteRenderer: {fileID: 0}
