@@ -59,12 +59,23 @@ public class Pathogen : MonoBehaviour {
 
     public GameObject FindClosestEpidermalCell()
     {
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("Epidermal");
+        GameObject[] gos1, gos2;
+        gos1 = GameObject.FindGameObjectsWithTag("Immune");
+        gos2 = GameObject.FindGameObjectsWithTag("Epidermal");
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;
-        foreach (GameObject go in gos)
+        foreach (GameObject go in gos1)
+        {
+            Vector2 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        foreach (GameObject go in gos2)
         {
             Vector2 diff = go.transform.position - position;
             float curDistance = diff.sqrMagnitude;

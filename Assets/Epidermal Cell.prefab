@@ -173,4 +173,5 @@ MonoBehaviour:
   reproduceTime: 5
   reproduceStartTime: 0
   duplicate: {fileID: 8373069986593578917}
+  epidermalIndex: 0
   mode: 0
