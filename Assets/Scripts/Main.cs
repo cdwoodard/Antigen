@@ -96,14 +96,30 @@ public class Main : MonoBehaviour {
         Invoke(nameof(Restart), gameRestartDelay);
     }
 
+    void DelayedAdvance()
+    {
+        Invoke(nameof(Advance), gameRestartDelay);
+    }
+
     void Restart()
     {
         // Reload the original scene
-        SceneManager.LoadScene("SampleScene"); 
+        SceneManager.LoadScene("Leveln"); 
     }
 
-    static public void HERO_DIED()
+    void Advance() //advance to the next level
+    {
+        // Reload the original scene
+        SceneManager.LoadScene("Leveln+1"); 
+    }
+
+    static public void NoEpidermalCells()
     {
         S.DelayedRestart();
+    }
+
+    static public void NoPathogens()
+    {
+        S.DelayedAdvance();
     }
 }

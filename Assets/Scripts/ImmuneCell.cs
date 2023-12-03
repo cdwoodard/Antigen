@@ -54,7 +54,7 @@ public class ImmuneCell : MonoBehaviour {
         }
         int num = Main.checkPathogenNum();
         if(num == 0){
-            Main.HERO_DIED();
+            Main.NoPathogens();
         }
     }
 
@@ -93,7 +93,6 @@ public class ImmuneCell : MonoBehaviour {
             }
         }
     }
-
 
     public GameObject FindClosestPathogen()
     {
