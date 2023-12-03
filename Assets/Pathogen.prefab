@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8831604071206546322}
   - component: {fileID: 3924550120195152566}
   m_Layer: 8
-  m_Name: Pathogen1
+  m_Name: Pathogen
   m_TagString: Pathogen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,10 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9c5288c541b524b9c22dc33e05c94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
+  type: Chickenpox
   image: {fileID: 0}
   health: 10
   speed: 1
+  damage: 1
   attackSpeed: 1
   lastAttackTime: 0
   spriteRenderer: {fileID: 0}

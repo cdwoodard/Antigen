@@ -10,9 +10,11 @@ public class Main : MonoBehaviour {
     [Header("Inscribed")]
     public TextMeshProUGUI uitChemokines;
     public bool spawnPathogens = true;
-    public GameObject[] prefabPathogens;
-    public int maxPathogens = 3; //max number of pathogens in a level
-    public float delayBetweenPathogen = 1f;
+    public GameObject[] initialPathogens;
+    public GameObject[] wavePathogens;
+    public int maxInitialPathogens = 3; //max number of initial pathogens in a level
+    public int maxWavePathogens = 5;//max number of wave pathogens in a level
+    public float delayBetweenPathogen = 2f;
     public float gameRestartDelay = 1f;
 
     //map of all types and costs
@@ -66,30 +68,46 @@ public class Main : MonoBehaviour {
         }
     }
 
-    public void SpawnPathogen()
-    {
-        if (spawnPathogens == false | numOfPathogen > maxPathogens)
-        {
-            //Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
-            return;
-        }
-        else {
-            // Pick a random Pathogen to instantiate
-            
-            int ndx = Random.Range(0, prefabPathogens.Length - 1);
-            GameObject go = Instantiate<GameObject>(prefabPathogens[ndx]);
+    public void SpawnPathogen(){ 
+        //check if supposed to spawn pathogens
+        if(spawnPathogens && numOfPathogen < maxInitialPathogens + maxWavePathogens){
+            //if done with initial, begin with wave
+            if (numOfPathogen > maxInitialPathogens) {
+                for(int i = 0; i < maxWavePathogens; i++){
+                    int ndx = Random.Range(0, wavePathogens.Length);
+                    GameObject go = Instantiate<GameObject>(wavePathogens[ndx]);
+                    // Put the pathogen in a random y position at the right of the screen
+                    float pathogenYpos = Random.Range(-5f,5f); //randomly pick from 0 to 1
+                
+                    // Set the initial position for the spawned pathogen
+                    Vector3 pos = Vector3.zero;
+                    pos.x = 10f;
+                    pos.y = pathogenYpos;
+                    go.transform.position = pos;
+                    Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
+                    numOfPathogen++;
+                }
+                return;
+            //trickle in pathogens one by one
+            } else {
+                // Pick a random Pathogen to instantiate
+                
+                int ndx = Random.Range(0, initialPathogens.Length);
+                GameObject go = Instantiate<GameObject>(initialPathogens[ndx]);
 
-            // Put the pathogen in a random y position at the right of the screen
-            float pathogenYpos = Random.Range(-5f,5f); //randomly pick from 0 to 1
-        
-            // Set the initial position for the spawned pathogen
-            Vector3 pos = Vector3.zero;
-            pos.x = 10f;
-            pos.y = pathogenYpos;
-            go.transform.position = pos;
-            Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
-            numOfPathogen++;
+                // Put the pathogen in a random y position at the right of the screen
+                float pathogenYpos = Random.Range(-5f,5f); //randomly pick from 0 to 1
+            
+                // Set the initial position for the spawned pathogen
+                Vector3 pos = Vector3.zero;
+                pos.x = 10f;
+                pos.y = pathogenYpos;
+                go.transform.position = pos;
+                Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
+                numOfPathogen++;
+            }
         }
+        return;
     }
 
     public static int checkPathogenNum(){

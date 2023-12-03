@@ -73,11 +73,11 @@ public class EpidermalCell : ImmuneCell {
         }
     }
 
-    public override void Attacked() {
+    public override void Attacked(int amount) {
         if (mode == option.generate){
             Main.chemokineIncrement(1);
         }
-        health--;
+        health -= amount;
     }
 
     //checks through all epidermal cells to see if one is in the position given

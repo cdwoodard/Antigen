@@ -13,6 +13,8 @@ public class ImmuneCell : MonoBehaviour {
 
     public bool followMouse = false; //for placing new cells down
 
+    public bool slowed = false; //hold whether it's been slowed or not
+
     public SpriteRenderer spriteRenderer;
 
     public Sprite explodedSprite; // sprite appearance that the white blood cell should change to once it explodes
@@ -131,7 +133,7 @@ public class ImmuneCell : MonoBehaviour {
         }
     }
 
-    public virtual void Attacked() {
-        if(!followMouse) health--;
+    public virtual void Attacked(int amount) {
+        if(!followMouse) health -= amount;
     }
 }

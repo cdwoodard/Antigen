@@ -339,19 +339,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uitChemokines: {fileID: 2133569544}
   spawnPathogens: 1
-  prefabPathogens:
+  initialPathogens:
+  - {fileID: 5042700968136054458, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
   - {fileID: 5042700968136054458, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
   - {fileID: 422606996588207115, guid: 8069c3c1a7da7dd42aa5d706b7cf0d30, type: 3}
-  maxPathogens: 3
-  delayBetweenPathogen: 1
-  gameRestartDelay: 2
+  wavePathogens:
+  - {fileID: 5042700968136054458, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
+  - {fileID: 0}
+  maxInitialPathogens: 3
+  maxWavePathogens: 5
+  delayBetweenPathogen: 2
+  gameRestartDelay: 1
   cells:
   - {fileID: 5898482464723096790, guid: ade9183b834b92740857ced5e9c11794, type: 3}
   - {fileID: 8017332293027129634, guid: db87b9aeed89ec64492fdfba6797b61a, type: 3}
   - {fileID: 6860834815135444898, guid: 2b19d473d45802849885b38032071438, type: 3}
   - {fileID: 0}
   prices: 0300000005000000050000000a000000
-  unlockedTCells: 0
   numOfPathogen: 0
   epidermalArray: []
 --- !u!1 &553406541

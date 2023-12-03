@@ -8,6 +8,7 @@ public class Pathogen : MonoBehaviour {
     public Sprite image;
     public int health = 10;
     public float speed = 1f;
+    public int damage = 1;
 
     public float attackSpeed = 1f; //attacks every 1 second
 
@@ -49,7 +50,7 @@ public class Pathogen : MonoBehaviour {
             } else { //if already nearby, attack 
                 if(attackReady(lastAttackTime)){
                     ImmuneCell i = target.GetComponent<ImmuneCell>();
-                    i.Attacked();
+                    i.Attacked(damage);
                     lastAttackTime = Time.time;
                 }
                 
@@ -57,7 +58,7 @@ public class Pathogen : MonoBehaviour {
         }
     }
 
-    public GameObject FindClosestEpidermalCell()
+    public virtual GameObject FindClosestEpidermalCell()
     {
         GameObject[] gos1, gos2;
         gos1 = GameObject.FindGameObjectsWithTag("Immune");
