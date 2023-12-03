@@ -41,14 +41,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: UI
-    uniqueID: 1133523719
+  - name: Background
+    uniqueID: 1751264019
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 1751264019
     locked: 0
   - name: Pathogen
     uniqueID: 3535168241
@@ -61,4 +58,7 @@ TagManager:
     locked: 0
   - name: Pause_Button
     uniqueID: 401886659
+    locked: 0
+  - name: UI
+    uniqueID: 1133523719
     locked: 0
