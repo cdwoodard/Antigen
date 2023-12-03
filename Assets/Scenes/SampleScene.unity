@@ -229,6 +229,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uitChemokines: {fileID: 2133569544}
+  spawnPathogens: 1
+  prefabPathogens:
+  - {fileID: 5042700968136054458, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
+  - {fileID: 422606996588207115, guid: 8069c3c1a7da7dd42aa5d706b7cf0d30, type: 3}
+  pathogenSpawnPerSecond: 0.5
   cells:
   - {fileID: 5898482464723096790, guid: ade9183b834b92740857ced5e9c11794, type: 3}
   - {fileID: 8017332293027129634, guid: db87b9aeed89ec64492fdfba6797b61a, type: 3}
@@ -374,17 +379,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
---- !u!114 &1061232819 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7654148358715038926, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
-  m_PrefabInstance: {fileID: 1061232818}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537db4faa3a264f9d85ca122b58bc0cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1100027498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,75 +1022,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
---- !u!1001 &6897537176962984387
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650236420748835528, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3924550120195152566, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: type
-      value: Chicken Pox
-      objectReference: {fileID: 0}
-    - target: {fileID: 3924550120195152566, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: image
-      value: 
-      objectReference: {fileID: 21300000, guid: ad94800904b7049cda40845fe7e49b40, type: 3}
-    - target: {fileID: 3924550120195152566, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: Encyclopedia
-      value: 
-      objectReference: {fileID: 1061232819}
-    - target: {fileID: 5042700968136054458, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-      propertyPath: m_Name
-      value: Pathogen1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1104,7 +1029,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1061232818}
   - {fileID: 2359881538512887549}
-  - {fileID: 6897537176962984387}
   - {fileID: 1998325600279223050}
   - {fileID: 1194448750}
   - {fileID: 553406543}
