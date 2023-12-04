@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EpidermalCell : ImmuneCell {
 
@@ -94,10 +95,12 @@ public class EpidermalCell : ImmuneCell {
 
     //swaps mode to be opposite of current one
     public void swapMode(){
+        Scene scene = SceneManager.GetActiveScene();
+
         if (mode == option.reproduce){
             mode = option.generate;
             GetComponent<SpriteRenderer>().color = Color.white;
-        } else {
+        } else if (scene.name != "Tutorial"){
             mode = option.reproduce;
             reproduceStartTime = Time.time;
             GetComponent<SpriteRenderer>().color = Color.blue;
