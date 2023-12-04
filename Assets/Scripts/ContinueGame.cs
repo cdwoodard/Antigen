@@ -25,8 +25,9 @@ public class ContinueGame : MonoBehaviour
         SwitchToSampleScene();
     }
 
-    public void SwitchToSampleScene()
-    {
+    public void SwitchToSampleScene(){
+        //roll back encyclopedia
+        Encyclopedia.RollBack();
         SceneManager.LoadScene(Main.IntendedLevel);
     }
 }
