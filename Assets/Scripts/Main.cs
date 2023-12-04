@@ -31,6 +31,8 @@ public class Main : MonoBehaviour {
     public GameObject purchase2;
     public GameObject purchase3;
 
+    public GameObject box1;
+
     [Header("Dynamic")]
 
     public static bool unlockedTCells = false;
@@ -93,9 +95,9 @@ public class Main : MonoBehaviour {
                 }
                 case 1:{
                     if(chemokines >= 3){
-                        
+                        box1.SetActive(true);
                     }
-                        break;
+                    break;
                 }
             }
         }
