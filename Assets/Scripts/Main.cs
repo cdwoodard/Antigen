@@ -26,10 +26,16 @@ public class Main : MonoBehaviour {
 
     public int[] prices;
 
+    // win and lose objects
+    public GameObject WLPanel;
+    public GameObject LoseImage;
+    public GameObject WinImage;
+    public GameObject ResetButton;
+    public GameObject AdvanceButton;
 
 
     //tons of tutorial objects listed here
-    
+
     public GameObject purchase1;
     public GameObject purchase2;
     public GameObject purchase3;
@@ -91,6 +97,37 @@ public class Main : MonoBehaviour {
         }
     }
 
+
+    void LossMessage()
+    {
+        WLPanel.SetActive(true);
+        LoseImage.SetActive(true);
+        ResetButton.SetActive(true);  
+    }
+
+    void WinMessage()
+    {
+        WLPanel.SetActive(true);
+        WinImage.SetActive(true);
+        AdvanceButton.SetActive(true);
+    }
+
+    public void DelayedRestart()
+    {
+        WLPanel.SetActive(false);
+        LoseImage.SetActive(false);
+        ResetButton.SetActive(false);
+        Invoke(nameof(Restart), gameRestartDelay);
+    }
+
+    public void DelayedAdvance()
+    {
+        WLPanel.SetActive(false);
+        WinImage.SetActive(false);
+        AdvanceButton.SetActive(false);
+        Invoke(nameof(Advance), gameRestartDelay);
+    }
+
     void Update(){
         epidermalArray = GameObject.FindGameObjectsWithTag("Epidermal");
         
@@ -99,12 +136,14 @@ public class Main : MonoBehaviour {
         //checks for lose condition
         if(epidermalArray.Length == 0 && scene.name != "Menu" && scene.name != "Levels" && scene.name != "Cutscene")
         {
-            DelayedRestart();
+            LossMessage();
+            //DelayedRestart();
         }
         //checks for win condition
         int num = checkPathogenNum();
         if(num == 0 && numOfPathogen >= maxInitialPathogens + maxWavePathogens && scene.name != "Tutorial"){
-            S.DelayedAdvance();
+            WinMessage();
+            //S.DelayedAdvance();
         }
 
 
@@ -314,15 +353,6 @@ public class Main : MonoBehaviour {
         S.UpdateGUI();
     }
 
-    void DelayedRestart()
-    {
-        Invoke(nameof(Restart), gameRestartDelay);
-    }
-
-    void DelayedAdvance()
-    {
-        Invoke(nameof(Advance), gameRestartDelay);
-    }
 
     void Restart()
     {
@@ -339,7 +369,6 @@ public class Main : MonoBehaviour {
         // SceneManager.LoadScene("Leveln+1");
 
         // Reload the original scene
-        print("entering advance?");
         Scene scene = SceneManager.GetActiveScene();
         string curr_scene = scene.name;
 
