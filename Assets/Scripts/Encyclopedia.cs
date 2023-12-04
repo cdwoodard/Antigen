@@ -44,6 +44,7 @@ public class Encyclopedia : MonoBehaviour {
     }
 
     public static Dictionary<string, entry> encyclopedia = new Dictionary<string, entry>();
+    public static Dictionary<string, entry> encyclopediaBackup;
 
     private static Encyclopedia E;
 
@@ -52,6 +53,13 @@ public class Encyclopedia : MonoBehaviour {
         print("hello?");
         E = this;
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+
+        //duplicate encyclopedia state from start of level, we'll roll back to this if player loses
+        encyclopediaBackup = new Dictionary<string, entry>(encyclopedia);
+    }
+
+    public static void RollBack(){
+        encyclopedia = new Dictionary<string, entry>(encyclopediaBackup);
     }
 
     public void SwitchSprite()
@@ -104,37 +112,4 @@ public class Encyclopedia : MonoBehaviour {
 
         }
     }
-
-    public void BackToGame()
-    {
-        EncyclopediaPanel.SetActive(false);
-        EncyclopediaImage.SetActive(false);
-        BackButton.SetActive(false);
-
-        ChickenPox_Image.SetActive(false);
-        ChickenPox_Text.SetActive(false);
-        ChickenPox_Resistance.SetActive(false);
-
-        Strep_Image.SetActive(false);
-        Strep_Text.SetActive(false);
-        Strep_Resistance.SetActive(false);
-
-        Aden_Image.SetActive(false);
-        Aden_Text.SetActive(false);
-        Aden_Resistance.SetActive(false);
-
-        Myco_Image.SetActive(false);
-        Myco_Text.SetActive(false);
-        Myco_Resistance.SetActive(false);
-
-        Time.timeScale = 1;
-
-
-        //tutorial code
-        Scene scene = SceneManager.GetActiveScene();
-        if(scene.name == "Tutorial" && Main.tutorialProgress == 23){
-            Main.tutorialProgress++;
-        }
-    }
-
 }

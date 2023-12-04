@@ -326,6 +326,8 @@ public class Main : MonoBehaviour {
 
     void Restart()
     {
+        //roll back encyclopedia
+        Encyclopedia.RollBack();
         // Reload the current scene
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);

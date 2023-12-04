@@ -902,7 +902,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 616947391}
-        m_TargetAssemblyTypeName: Encyclopedia, Assembly-CSharp
+        m_TargetAssemblyTypeName: EncyclopediaButton, Assembly-CSharp
         m_MethodName: BackToGame
         m_Mode: 1
         m_Arguments:
@@ -960,26 +960,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 616947385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537db4faa3a264f9d85ca122b58bc0cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 71745917a29847d47b0f800d4250bb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  updatedEncyclopedia: {fileID: 0}
-  EncyclopediaPanel: {fileID: 852632747}
-  EncyclopediaImage: {fileID: 1691505683}
-  BackButton: {fileID: 616947385}
-  ChickenPox_Image: {fileID: 1642571813}
-  ChickenPox_Text: {fileID: 1781378276}
-  ChickenPox_Resistance: {fileID: 1965978380}
-  Strep_Image: {fileID: 1297752418}
-  Strep_Text: {fileID: 1561193890}
-  Strep_Resistance: {fileID: 334145276}
-  Aden_Image: {fileID: 454703884}
-  Aden_Text: {fileID: 811210919}
-  Aden_Resistance: {fileID: 367772012}
-  Myco_Image: {fileID: 1562144794}
-  Myco_Text: {fileID: 838166213}
-  Myco_Resistance: {fileID: 1076882562}
+  eObjects:
+  - {fileID: 852632747}
+  - {fileID: 1691505683}
+  - {fileID: 616947385}
+  - {fileID: 1781378276}
+  - {fileID: 1642571813}
+  - {fileID: 1965978380}
+  - {fileID: 1561193890}
+  - {fileID: 1297752418}
+  - {fileID: 334145276}
+  - {fileID: 811210919}
+  - {fileID: 454703884}
+  - {fileID: 367772012}
+  - {fileID: 838166213}
+  - {fileID: 1562144794}
+  - {fileID: 1076882562}
 --- !u!1 &811210919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,11 +1538,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.21
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1580,6 +1579,10 @@ PrefabInstance:
     - target: {fileID: 6203409532866347182, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_Name
       value: Encyclopedia
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203409532866347182, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7654148358715038926, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: Aden_Text

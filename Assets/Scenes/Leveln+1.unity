@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 161845278}
   - component: {fileID: 161845277}
   - component: {fileID: 161845276}
-  - component: {fileID: 161845275}
+  - component: {fileID: 161845279}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -346,35 +346,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1300, y: 900}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &161845275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161845273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537db4faa3a264f9d85ca122b58bc0cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  updatedEncyclopedia: {fileID: 0}
-  EncyclopediaPanel: {fileID: 186521069}
-  EncyclopediaImage: {fileID: 753803053}
-  BackButton: {fileID: 161845273}
-  ChickenPox_Image: {fileID: 623696672}
-  ChickenPox_Text: {fileID: 522854021}
-  ChickenPox_Resistance: {fileID: 483880965}
-  Strep_Image: {fileID: 961942435}
-  Strep_Text: {fileID: 1936272058}
-  Strep_Resistance: {fileID: 1281093210}
-  Aden_Image: {fileID: 725241894}
-  Aden_Text: {fileID: 354605961}
-  Aden_Resistance: {fileID: 1286857719}
-  Myco_Image: {fileID: 815968476}
-  Myco_Text: {fileID: 1231057590}
-  Myco_Resistance: {fileID: 446666313}
 --- !u!114 &161845276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,8 +390,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 161845275}
-        m_TargetAssemblyTypeName: Encyclopedia, Assembly-CSharp
+      - m_Target: {fileID: 161845279}
+        m_TargetAssemblyTypeName: EncyclopediaButton, Assembly-CSharp
         m_MethodName: BackToGame
         m_Mode: 1
         m_Arguments:
@@ -469,6 +440,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161845273}
   m_CullTransparentMesh: 1
+--- !u!114 &161845279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161845273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71745917a29847d47b0f800d4250bb6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eObjects:
+  - {fileID: 186521069}
+  - {fileID: 753803053}
+  - {fileID: 161845273}
+  - {fileID: 522854021}
+  - {fileID: 623696672}
+  - {fileID: 483880965}
+  - {fileID: 1936272058}
+  - {fileID: 961942435}
+  - {fileID: 1281093210}
+  - {fileID: 354605961}
+  - {fileID: 725241894}
+  - {fileID: 1286857719}
+  - {fileID: 1231057590}
+  - {fileID: 815968476}
+  - {fileID: 446666313}
 --- !u!1 &186521069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,8 +1555,19 @@ MonoBehaviour:
   purchase1: {fileID: 0}
   purchase2: {fileID: 0}
   purchase3: {fileID: 0}
+  box1: {fileID: 0}
+  box2: {fileID: 0}
+  box3: {fileID: 0}
+  box4: {fileID: 0}
+  box5: {fileID: 0}
+  arrow1: {fileID: 0}
+  arrow2: {fileID: 0}
+  arrow3: {fileID: 0}
+  text1: {fileID: 0}
+  text2: {fileID: 0}
+  text1image: {fileID: 0}
+  button1: {fileID: 0}
   numOfPathogen: 0
-  tutorialProgress: 0
   epidermalArray: []
 --- !u!1 &522854021
 GameObject:
@@ -2227,15 +2237,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.21
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.06559109
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2268,6 +2278,10 @@ PrefabInstance:
     - target: {fileID: 6203409532866347182, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_Name
       value: Encyclopedia
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203409532866347182, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7654148358715038926, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: Aden_Text

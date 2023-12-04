@@ -1006,11 +1006,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.21
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2705289556651271863, guid: 86a9f3580b13c4065bdb4703f7b277ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3341,7 +3341,7 @@ GameObject:
   - component: {fileID: 1475346043}
   - component: {fileID: 1475346042}
   - component: {fileID: 1475346041}
-  - component: {fileID: 1475346040}
+  - component: {fileID: 1475346044}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -3368,35 +3368,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1300, y: 900}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1475346040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475346038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537db4faa3a264f9d85ca122b58bc0cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  updatedEncyclopedia: {fileID: 0}
-  EncyclopediaPanel: {fileID: 1857474827}
-  EncyclopediaImage: {fileID: 339693051}
-  BackButton: {fileID: 1475346038}
-  ChickenPox_Image: {fileID: 597372170}
-  ChickenPox_Text: {fileID: 113974061}
-  ChickenPox_Resistance: {fileID: 1220635210}
-  Strep_Image: {fileID: 1804193667}
-  Strep_Text: {fileID: 1576108178}
-  Strep_Resistance: {fileID: 227329959}
-  Aden_Image: {fileID: 2099870972}
-  Aden_Text: {fileID: 327210146}
-  Aden_Resistance: {fileID: 1182008047}
-  Myco_Image: {fileID: 1393010699}
-  Myco_Text: {fileID: 1997353974}
-  Myco_Resistance: {fileID: 1008789725}
 --- !u!114 &1475346041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3441,8 +3412,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1475346040}
-        m_TargetAssemblyTypeName: Encyclopedia, Assembly-CSharp
+      - m_Target: {fileID: 1475346044}
+        m_TargetAssemblyTypeName: EncyclopediaButton, Assembly-CSharp
         m_MethodName: BackToGame
         m_Mode: 1
         m_Arguments:
@@ -3491,6 +3462,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475346038}
   m_CullTransparentMesh: 1
+--- !u!114 &1475346044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475346038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71745917a29847d47b0f800d4250bb6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eObjects:
+  - {fileID: 1857474827}
+  - {fileID: 339693051}
+  - {fileID: 1475346038}
+  - {fileID: 113974061}
+  - {fileID: 597372170}
+  - {fileID: 1220635210}
+  - {fileID: 1576108178}
+  - {fileID: 1804193667}
+  - {fileID: 227329959}
+  - {fileID: 327210146}
+  - {fileID: 2099870972}
+  - {fileID: 1182008047}
+  - {fileID: 1997353974}
+  - {fileID: 1393010699}
+  - {fileID: 1008789725}
 --- !u!1 &1576108178
 GameObject:
   m_ObjectHideFlags: 0
