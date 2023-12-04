@@ -490,7 +490,7 @@ MonoBehaviour:
   - {fileID: 422606996588207115, guid: 8069c3c1a7da7dd42aa5d706b7cf0d30, type: 3}
   wavePathogens:
   - {fileID: 5042700968136054458, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
-  - {fileID: 0}
+  - {fileID: 422606996588207115, guid: 8069c3c1a7da7dd42aa5d706b7cf0d30, type: 3}
   maxInitialPathogens: 3
   maxWavePathogens: 5
   delayBetweenPathogen: 2

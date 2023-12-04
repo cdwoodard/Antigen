@@ -17,6 +17,10 @@ public class Main : MonoBehaviour {
     public float delayBetweenPathogen = 2f;
     public float gameRestartDelay = 1f;
 
+    public static List<string> LevelStrings = new List<string> { "Leveln", "Leveln+1" };
+    public static HashSet<string> CompletedLevels = new HashSet<string> { };
+    public static string IntendedLevel = "Leveln";
+
     //map of all types and costs
     public GameObject[] cells;
 
@@ -42,7 +46,8 @@ public class Main : MonoBehaviour {
         //set (or reset) some starting variables
         chemokines = 0;
         unlockedTCells = false;
-        
+
+
         S.UpdateGUI();
         for(int i = 0; i < cells.Length; i++){
             if(!priceMap.ContainsKey(cells[i])){
@@ -147,7 +152,23 @@ public class Main : MonoBehaviour {
     void Advance() //advance to the next level
     {
         // Reload the original scene
-        SceneManager.LoadScene("Leveln+1");
+        // SceneManager.LoadScene("Leveln+1");
+
+        // Reload the original scene
+        print("entering advance?");
+        Scene scene = SceneManager.GetActiveScene();
+        string curr_scene = scene.name;
+
+        int current_index = LevelStrings.IndexOf(curr_scene);
+        int next_index = current_index + 1;
+        if (next_index == LevelStrings.Count)
+        {
+            next_index = current_index;
+        }
+        CompletedLevels.Add(LevelStrings[current_index]);
+        string next_scene = LevelStrings[next_index];
+        IntendedLevel = next_scene;
+        SceneManager.LoadScene(next_scene);
 
     }
 

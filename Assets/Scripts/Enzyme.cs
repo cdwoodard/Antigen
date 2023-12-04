@@ -33,7 +33,7 @@ public class Enzyme : MonoBehaviour {
                 Destroy(gameObject);
             }
         } else {
-            print("enzyme hit a non-encyclopedia-pathogen: " + otherGO.name);
+            // print("enzyme hit a non-encyclopedia-pathogen: " + otherGO.name);
         }
     }
 }

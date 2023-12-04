@@ -19,6 +19,6 @@ public class ContinueGame : MonoBehaviour
 
     public void SwitchToSampleScene()
     {
-        SceneManager.LoadScene("Leveln");
+        SceneManager.LoadScene(Main.IntendedLevel);
     }
 }
