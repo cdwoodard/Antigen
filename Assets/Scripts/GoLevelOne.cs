@@ -17,7 +17,7 @@ public class GoLevelOne : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (Main.CompletedLevels.Contains("Leveln"))
+      if (Main.CompletedLevels.Contains("Tutorial"))
         {
             LevelOneButton.SetActive(true);
         }
