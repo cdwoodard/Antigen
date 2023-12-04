@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Purchase : MonoBehaviour {
 
@@ -30,10 +31,24 @@ public class Purchase : MonoBehaviour {
                     print("is go null? : " + go == null);
                     //prevent collisions before being placed
                     go.layer = 5;
+                    go.tag = "Untagged";
                     //follow the mouse until placed
                     go.GetComponent<ImmuneCell>().followMouse = true;
+
+                    //checks if clicked in tutorial
+                    Scene scene = SceneManager.GetActiveScene();
+                    if(scene.name == "Tutorial" && Main.tutorialProgress == 2 || Main.tutorialProgress == 13 || Main.tutorialProgress == 19){
+                        Main.tutorialProgress++;
+                    }
                 } else {
                     Main.unlockedTCells = true;
+                    
+                    //checks if clicked in tutorial
+                    Scene scene = SceneManager.GetActiveScene();
+                    if(scene.name == "Tutorial" && Main.tutorialProgress == 10){
+                        Main.tutorialProgress++;
+                    }
+
                     Destroy(gameObject);
                 }
             }

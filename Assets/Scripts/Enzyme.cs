@@ -29,7 +29,7 @@ public class Enzyme : MonoBehaviour {
             //check if pathogen is in encylcopedia already
             if (Encyclopedia.encyclopedia.ContainsKey(p.type)){
                 int strength = Encyclopedia.encyclopedia[p.type].strength;
-                p.Attacked(strength);
+                p.Attacked(1 + strength * 2);
                 Destroy(gameObject);
             }
         } else {

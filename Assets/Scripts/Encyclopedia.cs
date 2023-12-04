@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Encyclopedia : MonoBehaviour { 
 
@@ -127,6 +128,13 @@ public class Encyclopedia : MonoBehaviour {
         Myco_Resistance.SetActive(false);
 
         Time.timeScale = 1;
+
+
+        //tutorial code
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.name == "Tutorial" && Main.tutorialProgress == 23){
+            Main.tutorialProgress++;
+        }
     }
 
 }

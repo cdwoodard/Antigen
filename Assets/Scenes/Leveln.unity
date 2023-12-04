@@ -720,8 +720,19 @@ MonoBehaviour:
   purchase1: {fileID: 0}
   purchase2: {fileID: 0}
   purchase3: {fileID: 0}
+  box1: {fileID: 0}
+  box2: {fileID: 0}
+  box3: {fileID: 0}
+  box4: {fileID: 0}
+  box5: {fileID: 0}
+  arrow1: {fileID: 0}
+  arrow2: {fileID: 0}
+  arrow3: {fileID: 0}
+  text1: {fileID: 0}
+  text2: {fileID: 0}
+  text1image: {fileID: 0}
+  button1: {fileID: 0}
   numOfPathogen: 0
-  tutorialProgress: 0
   epidermalArray: []
 --- !u!1 &553406541
 GameObject:

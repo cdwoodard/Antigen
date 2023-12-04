@@ -29,6 +29,7 @@ public class MemoryTCell : ImmuneCell {
             if (followMouse) {
                 followMouse = false;
                 gameObject.layer = 6;
+                gameObject.tag = "Immune";
                 //creates a MemoryTRange object, which has a larger hitbox, and detects when a pathogen is nearby
                 range = Instantiate<GameObject>(go);
                 range.transform.position = transform.position;

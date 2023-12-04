@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ImmuneCell : MonoBehaviour {
     public int health = 10;
@@ -51,12 +52,14 @@ public class ImmuneCell : MonoBehaviour {
             Move();
 
             if (health < 1){
+                //checks if killed
+                Scene scene = SceneManager.GetActiveScene();
+                if(scene.name == "Tutorial" && Main.tutorialProgress == 8){
+                    Main.tutorialProgress++;
+                }
+
                 Destroy(gameObject);
             }
-        }
-        int num = Main.checkPathogenNum();
-        if(num == 0){
-            Main.NoPathogens();
         }
     }
 
@@ -88,8 +91,8 @@ public class ImmuneCell : MonoBehaviour {
             } else { //if already nearby, attack 
                 if(attackReady(lastAttackTime)){
                     Pathogen p = target.GetComponent<Pathogen>();
-                    SwitchSprite();
-                    p.Attacked(5);
+                    //SwitchSprite();
+                    p.Attacked(1);
                     lastAttackTime = Time.time;
                 }
                 
@@ -129,6 +132,13 @@ public class ImmuneCell : MonoBehaviour {
             if (followMouse) {
                 followMouse = false;
                 gameObject.layer = 6;
+                gameObject.tag = "Immune";
+                
+                //checks if placed for use by tutorial
+                Scene scene = SceneManager.GetActiveScene();
+                if(scene.name == "Tutorial" && Main.tutorialProgress == 4 || Main.tutorialProgress == 15){
+                    Main.tutorialProgress++;
+                }
             }
         }
     }
