@@ -18,7 +18,7 @@ public class Pathogen_Debuff : Pathogen {
             } else { //if already nearby, attack 
                 if(attackReady(lastAttackTime)){
                     ImmuneCell i = target.GetComponent<ImmuneCell>();
-                    i.attackSpeed = i.attackSpeed / 2;
+                    i.attackSpeed = i.attackSpeed * 2; //twice as slow
                     i.slowed = true;
                     lastAttackTime = Time.time;
                 }

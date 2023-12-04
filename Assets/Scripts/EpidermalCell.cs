@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EpidermalCell : ImmuneCell {
 
-    public int maxHealth = 10;
+    public int maxHealth = 100;
 
     public float reproduceTime = 5; //time in seconds to duplicate
     public float reproduceStartTime;

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Encyclopedia : MonoBehaviour { 
 
     public SpriteRenderer spriteRenderer;
+
+    public Sprite defaultEncyclopedia;
     public Sprite updatedEncyclopedia; // sprite appearance once a new enemy is found
 
     // General Sprites
@@ -62,8 +64,7 @@ public class Encyclopedia : MonoBehaviour {
         encyclopedia = new Dictionary<string, entry>(encyclopediaBackup);
     }
 
-    public void SwitchSprite()
-    {
+    public void SwitchSprite(){
         spriteRenderer.sprite = updatedEncyclopedia;
     }
 
@@ -78,6 +79,7 @@ public class Encyclopedia : MonoBehaviour {
         {
             print("on Mouse Down?");
             Time.timeScale = 0;
+            spriteRenderer.sprite = defaultEncyclopedia;
             EncyclopediaPanel.SetActive(true);
             EncyclopediaImage.SetActive(true);
             BackButton.SetActive(true);

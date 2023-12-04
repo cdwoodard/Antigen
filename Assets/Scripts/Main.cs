@@ -17,7 +17,7 @@ public class Main : MonoBehaviour {
     public float delayBetweenPathogen = 2f;
     public float gameRestartDelay = 1f;
 
-    public static List<string> LevelStrings = new List<string> {"Tutorial", "Leveln", "Leveln+1" };
+    public static List<string> LevelStrings = new List<string> {"Tutorial", "Leveln", "Cutscene", "Leveln+1" };
     public static HashSet<string> CompletedLevels = new HashSet<string> { };
     public static string IntendedLevel = "Tutorial";
 
@@ -85,7 +85,7 @@ public class Main : MonoBehaviour {
 
         Scene scene = SceneManager.GetActiveScene();
 
-        if(scene.name != "Menu" && scene.name != "Tutorial"){
+        if(scene.name == "Leveln" || scene.name == "Leveln+1"){
             Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
             numOfPathogen++;
         }
@@ -97,7 +97,7 @@ public class Main : MonoBehaviour {
         Scene scene = SceneManager.GetActiveScene();
 
         //checks for lose condition
-        if(epidermalArray.Length == 0 && scene.name != "Menu" && scene.name != "Levels")
+        if(epidermalArray.Length == 0 && scene.name != "Menu" && scene.name != "Levels" && scene.name != "Cutscene")
         {
             DelayedRestart();
         }
@@ -171,7 +171,6 @@ public class Main : MonoBehaviour {
                 case 11:{
                     box2.SetActive(false);
                     purchase2.SetActive(true);
-                    purchase1.SetActive(true);
                     tutorialProgress++;
                     break;
                 }
@@ -205,6 +204,7 @@ public class Main : MonoBehaviour {
                     text1image.SetActive(false);
                     button1.SetActive(false);
                     box4.SetActive(true);
+                    purchase1.SetActive(true);
                     Time.timeScale = 1;
                     tutorialProgress++;
                     break;
@@ -303,7 +303,7 @@ public class Main : MonoBehaviour {
 
     void UpdateGUI() {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name != "Menu" && scene.name != "Levels"){
+        if (scene.name != "Menu" && scene.name != "Levels" && scene.name != "Cutscene"){
             // Show the data in the GUITexts
             uitChemokines.text = "C: " + chemokines;
         }

@@ -13,6 +13,9 @@ public class Purchase : MonoBehaviour {
     public void Start(){
         cost = Main.priceMap[type];
     }
+    
+    public GameObject tutorialCheck1;
+    public GameObject tutorialCheck2;
 
     public void OnMouseOver(){
         if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
@@ -37,8 +40,14 @@ public class Purchase : MonoBehaviour {
 
                     //checks if clicked in tutorial
                     Scene scene = SceneManager.GetActiveScene();
-                    if(scene.name == "Tutorial" && Main.tutorialProgress == 2 || Main.tutorialProgress == 13 || Main.tutorialProgress == 19){
-                        Main.tutorialProgress++;
+                    if(scene.name == "Tutorial"){
+                        if(Main.tutorialProgress == 2) {
+                            Main.tutorialProgress++;
+                        } else if (Main.tutorialProgress == 13 && type == tutorialCheck1){
+                            Main.tutorialProgress++;
+                        } else if (Main.tutorialProgress == 19 && type == tutorialCheck2){
+                            Main.tutorialProgress++;
+                        }
                     }
                 } else {
                     Main.unlockedTCells = true;

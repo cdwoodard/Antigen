@@ -22,7 +22,7 @@ public class Pathogen_Infect : Pathogen {
                 if (count >= 20){
                     ImmuneCell i = target.GetComponent<ImmuneCell>();
                     i.Attacked(i.health);
-                    for(int j = 0; j < 10; j++){
+                    for(int j = 0; j < 5; j++){
                         GameObject go = Instantiate<GameObject>(duplicate);
                         go.transform.position = transform.position;
                         count = 0;
