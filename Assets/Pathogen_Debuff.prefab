@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf2e5a2b8131d64a9bca8ccf2f8504c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
+  type: Mycobacterium ulcerans
   image: {fileID: 0}
   health: 15
   speed: 2.5
