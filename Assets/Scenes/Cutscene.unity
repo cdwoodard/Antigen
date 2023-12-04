@@ -160,7 +160,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 450.00012, y: -800.01}
-  m_SizeDelta: {x: 800, y: 950}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &10722041
 MonoBehaviour:
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 24e933ef4b76d4c83aea6efce1c816d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50feee68da5e54a61834712a4c98b363, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -480,7 +480,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.18503028, g: 0.19378684, b: 0.20754719, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -559,6 +559,11 @@ MonoBehaviour:
   cells:
   - {fileID: 5898482464723096790, guid: ade9183b834b92740857ced5e9c11794, type: 3}
   prices: 05000000
+  WLPanel: {fileID: 0}
+  LoseImage: {fileID: 0}
+  WinImage: {fileID: 0}
+  ResetButton: {fileID: 0}
+  AdvanceButton: {fileID: 0}
   purchase1: {fileID: 0}
   purchase2: {fileID: 0}
   purchase3: {fileID: 0}
@@ -892,7 +897,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -520, y: -800.01}
-  m_SizeDelta: {x: 800, y: 950}
+  m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104699928
 MonoBehaviour:
@@ -970,7 +975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 315119bef9dbd4b1ca0b0ff10cd0dc6f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1ba695deffb24d0c8f3b61a207eec4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
