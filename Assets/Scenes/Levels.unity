@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelOneButton: {fileID: 304414213}
+  LevelTwoButton: {fileID: 2030378937}
 --- !u!114 &287534830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelOneButton: {fileID: 304414213}
+  LevelTwoButton: {fileID: 0}
 --- !u!1 &341077816
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,11 +589,27 @@ MonoBehaviour:
   cells:
   - {fileID: 5898482464723096790, guid: ade9183b834b92740857ced5e9c11794, type: 3}
   prices: 05000000
+  WLPanel: {fileID: 0}
+  LoseImage: {fileID: 0}
+  WinImage: {fileID: 0}
+  ResetButton: {fileID: 0}
+  AdvanceButton: {fileID: 0}
   purchase1: {fileID: 0}
   purchase2: {fileID: 0}
   purchase3: {fileID: 0}
+  box1: {fileID: 0}
+  box2: {fileID: 0}
+  box3: {fileID: 0}
+  box4: {fileID: 0}
+  box5: {fileID: 0}
+  arrow1: {fileID: 0}
+  arrow2: {fileID: 0}
+  arrow3: {fileID: 0}
+  text1: {fileID: 0}
+  text2: {fileID: 0}
+  text1image: {fileID: 0}
+  button1: {fileID: 0}
   numOfPathogen: 0
-  tutorialProgress: 0
   epidermalArray: []
 --- !u!1 &1211560006
 GameObject:
@@ -955,6 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c92bf775a5b5459798b15ecf8e766f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelOneButton: {fileID: 304414213}
 --- !u!1 &2030378937
 GameObject:
   m_ObjectHideFlags: 0
