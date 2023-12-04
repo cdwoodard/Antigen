@@ -52,7 +52,6 @@ public class Encyclopedia : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start(){
-        //print("hello?");
         E = this;
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
 
@@ -77,7 +76,6 @@ public class Encyclopedia : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
         {
-            //print("on Mouse Down?");
             Time.timeScale = 0;
             spriteRenderer.sprite = defaultEncyclopedia;
             EncyclopediaPanel.SetActive(true);

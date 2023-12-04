@@ -21,17 +21,12 @@ public class Purchase : MonoBehaviour {
         if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
             // helps users with macs, where difference between middle click and left cick is blurred
         {
-            print("clicking");
             cost = Main.priceMap[type];
-            print("cost:" + cost);
             if(Main.chemokines >= cost && (Main.unlockedTCells || !needsUnlock)){
-                print("reaching?");
                 Main.chemokineIncrement(cost * -1);
                 if(type != null){
                     //create new immune cell
                     GameObject go = Instantiate<GameObject>(type);
-                    print(type.name);
-                    print("is go null? : " + go == null);
                     //prevent collisions before being placed
                     go.layer = 5;
                     go.tag = "Untagged";
