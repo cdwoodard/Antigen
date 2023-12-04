@@ -17,7 +17,6 @@ public class Purchase : MonoBehaviour {
         if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
             // helps users with macs, where difference between middle click and left cick is blurred
         {
-            print("clicking");
             cost = Main.priceMap[type];
             if(Main.chemokines >= cost && (Main.unlockedTCells || !needsUnlock)){
                 Main.chemokineIncrement(cost * -1);
