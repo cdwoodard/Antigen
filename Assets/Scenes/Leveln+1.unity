@@ -924,11 +924,14 @@ MonoBehaviour:
   initialPathogens:
   - {fileID: 5042700968136054458, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
   - {fileID: 422606996588207115, guid: 8069c3c1a7da7dd42aa5d706b7cf0d30, type: 3}
+  - {fileID: 422606996588207115, guid: 8069c3c1a7da7dd42aa5d706b7cf0d30, type: 3}
+  - {fileID: 4298488693314473730, guid: 3aa1f67784246104ab444607d32a0130, type: 3}
   wavePathogens:
   - {fileID: 5042700968136054458, guid: 41f454d4af34d174c9a659a86eeae472, type: 3}
   - {fileID: 422606996588207115, guid: 8069c3c1a7da7dd42aa5d706b7cf0d30, type: 3}
   - {fileID: 422606996588207115, guid: 8069c3c1a7da7dd42aa5d706b7cf0d30, type: 3}
   - {fileID: 7013147988087926512, guid: 61e448ddfeb38924db9ae56f11830e79, type: 3}
+  - {fileID: 4298488693314473730, guid: 3aa1f67784246104ab444607d32a0130, type: 3}
   maxInitialPathogens: 8
   maxWavePathogens: 12
   delayBetweenPathogen: 2
