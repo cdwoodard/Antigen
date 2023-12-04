@@ -1627,6 +1627,11 @@ MonoBehaviour:
   - {fileID: 6860834815135444898, guid: 2b19d473d45802849885b38032071438, type: 3}
   - {fileID: 0}
   prices: 0300000005000000050000000a000000
+  WLPanel: {fileID: 373748560}
+  LoseImage: {fileID: 1966712807}
+  WinImage: {fileID: 1828433185}
+  ResetButton: {fileID: 1564005959}
+  AdvanceButton: {fileID: 833471933}
   purchase1: {fileID: 0}
   purchase2: {fileID: 0}
   purchase3: {fileID: 0}
@@ -3812,7 +3817,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1564005962}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 519420033}
+        m_TargetAssemblyTypeName: Main, Assembly-CSharp
+        m_MethodName: DelayedRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1564005962
 MonoBehaviour:
   m_ObjectHideFlags: 0
