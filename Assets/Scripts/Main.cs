@@ -76,7 +76,8 @@ public class Main : MonoBehaviour {
         
         Scene scene = SceneManager.GetActiveScene();
 
-        if(epidermalArray.Length == 0 && scene.name != "Menu"){
+        if(epidermalArray.Length == 0 && scene.name != "Menu" && scene.name != "Levels")
+        {
             DelayedRestart();
         }
 
@@ -147,7 +148,7 @@ public class Main : MonoBehaviour {
 
     void UpdateGUI() {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name != "Menu"){
+        if (scene.name != "Menu" && scene.name != "Levels"){
             // Show the data in the GUITexts
             uitChemokines.text = "C: " + chemokines;
         }

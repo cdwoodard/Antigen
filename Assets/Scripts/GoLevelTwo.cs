@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class GoLevelTwo : MonoBehaviour
 {
+    public GameObject LevelTwoButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,17 +16,14 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Main.CompletedLevels.Contains("Leveln+1"))
+        {
+            LevelTwoButton.SetActive(true);
+        }
     }
 
-    public void SwitchToMenu()
-    { 
-        SceneManager.LoadScene("Menu");
-    }
-
-    public void SwitchToLevels()
+    public void SwitchToLevelTwo()
     {
-        SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene("Leveln+1");
     }
-
 }
