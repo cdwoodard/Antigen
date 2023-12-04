@@ -354,8 +354,8 @@ public class Main : MonoBehaviour {
     }
 
 
-    void Restart()
-    {
+    public void Restart(){
+        Time.timeScale = 1; //prevent softlock when losing while paused
         //roll back encyclopedia
         Encyclopedia.RollBack();
         // Reload the current scene
@@ -363,8 +363,8 @@ public class Main : MonoBehaviour {
         SceneManager.LoadScene(scene.name);
     }
 
-    void Advance() //advance to the next level
-    {
+    public void Advance(){ //advance to the next level
+        Time.timeScale = 1; //prevent softlock when winning while paused
         // Reload the original scene
         // SceneManager.LoadScene("Leveln+1");
 
