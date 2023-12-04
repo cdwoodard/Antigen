@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 
   image: {fileID: 0}
-  health: 10
+  health: 15
   speed: 2.5
   damage: 1
   attackSpeed: 1

@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b587d0e2e7381944e89fa44b153b8067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
+  type: Adenovirus
   image: {fileID: 0}
   health: 10
   speed: 1

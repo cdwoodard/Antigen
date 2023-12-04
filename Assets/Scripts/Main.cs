@@ -17,19 +17,27 @@ public class Main : MonoBehaviour {
     public float delayBetweenPathogen = 2f;
     public float gameRestartDelay = 1f;
 
-    public static List<string> LevelStrings = new List<string> { "Leveln", "Leveln+1" };
+    public static List<string> LevelStrings = new List<string> {"Tutorial", "Leveln", "Leveln+1" };
     public static HashSet<string> CompletedLevels = new HashSet<string> { };
-    public static string IntendedLevel = "Leveln";
+    public static string IntendedLevel = "Tutorial";
 
     //map of all types and costs
     public GameObject[] cells;
 
     public int[] prices;
 
+    
+    public GameObject purchase1;
+    public GameObject purchase2;
+    public GameObject purchase3;
+
     [Header("Dynamic")]
 
     public static bool unlockedTCells = false;
     public int numOfPathogen = 0;
+
+    public int tutorialProgress = 0;
+
     public GameObject[] epidermalArray;
     public static GameObject[] pathogenArray;
     public static Dictionary<GameObject, int> priceMap = new Dictionary<GameObject, int>();
@@ -57,7 +65,7 @@ public class Main : MonoBehaviour {
 
         Scene scene = SceneManager.GetActiveScene();
 
-        if(scene.name != "Menu"){
+        if(scene.name != "Menu" && scene.name != "Tutorial"){
             Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
             numOfPathogen++;
         }
@@ -70,6 +78,23 @@ public class Main : MonoBehaviour {
 
         if(epidermalArray.Length == 0 && scene.name != "Menu"){
             DelayedRestart();
+        }
+
+        if(scene.name == "Tutorial")
+            switch (tutorialProgress) {
+                case 0:{
+                    purchase1.SetActive(false);
+                    purchase2.SetActive(false);
+                    purchase3.SetActive(false);
+                    Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
+                    tutorialProgress++;
+                }
+                case 1:{
+                    if(chemokines >= 3){
+                        
+                    }
+                }
+            }
         }
     }
 
@@ -145,8 +170,9 @@ public class Main : MonoBehaviour {
 
     void Restart()
     {
-        // Reload the original scene
-        SceneManager.LoadScene("Leveln");
+        // Reload the current scene
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 
     void Advance() //advance to the next level

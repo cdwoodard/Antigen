@@ -1,22 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class About : MonoBehaviour
-{
-    public GameObject AboutPanel;
+public class About : MonoBehaviour {
     public GameObject AboutMessage;
-    public GameObject CloseButton;
+    public GameObject uitAbout;
+
+    public bool open = false;
+
+    public void Click(){
+        if(open){
+            open = false;
+            AboutClose();
+        } else {
+            open = true;
+            AboutOpen();
+        }
+    }
 
     public void AboutOpen(){
-        AboutPanel.SetActive(true);
         AboutMessage.SetActive(true);
-        CloseButton.SetActive(true);
+        uitAbout.SetActive(true);
     }
 
     public void AboutClose(){
-        AboutPanel.SetActive(false);
         AboutMessage.SetActive(false);
-        CloseButton.SetActive(false);
+        uitAbout.SetActive(false);
     }
 }
