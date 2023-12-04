@@ -17,6 +17,14 @@ public class ContinueGame : MonoBehaviour
         
     }
 
+    public void StartNewGame()
+    {
+        Main.CompletedLevels.Clear();
+        Encyclopedia.encyclopedia.Clear();
+        Main.IntendedLevel = "Tutorial";
+        SwitchToSampleScene();
+    }
+
     public void SwitchToSampleScene()
     {
         SceneManager.LoadScene(Main.IntendedLevel);

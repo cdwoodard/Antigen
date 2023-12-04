@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GoLevelOne : MonoBehaviour
+public class GoLevelTutorial : MonoBehaviour
 {
-
-    public GameObject LevelOneButton;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +14,11 @@ public class GoLevelOne : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (Main.CompletedLevels.Contains("Leveln"))
-        {
-            LevelOneButton.SetActive(true);
-        }
+        
     }
 
-    public void SwitchToLevelOne()
+    public void SwitchToTutorial()
     {
-        SceneManager.LoadScene("Leveln");
+        SceneManager.LoadScene("Tutorial");
     }
 }

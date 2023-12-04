@@ -587,7 +587,11 @@ MonoBehaviour:
   cells:
   - {fileID: 5898482464723096790, guid: ade9183b834b92740857ced5e9c11794, type: 3}
   prices: 05000000
+  purchase1: {fileID: 0}
+  purchase2: {fileID: 0}
+  purchase3: {fileID: 0}
   numOfPathogen: 0
+  tutorialProgress: 0
   epidermalArray: []
 --- !u!1 &1211560006
 GameObject:
@@ -818,6 +822,7 @@ GameObject:
   - component: {fileID: 1519602457}
   - component: {fileID: 1519602456}
   - component: {fileID: 1519602455}
+  - component: {fileID: 1519602458}
   m_Layer: 5
   m_Name: LevelZero
   m_TagString: Untagged
@@ -887,7 +892,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1519602456}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1519602458}
+        m_TargetAssemblyTypeName: GoLevelTutorial, Assembly-CSharp
+        m_MethodName: SwitchToTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1519602456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,6 +943,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519602453}
   m_CullTransparentMesh: 1
+--- !u!114 &1519602458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519602453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c92bf775a5b5459798b15ecf8e766f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2030378937
 GameObject:
   m_ObjectHideFlags: 0
