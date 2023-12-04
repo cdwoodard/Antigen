@@ -89,11 +89,13 @@ public class Main : MonoBehaviour {
                     purchase3.SetActive(false);
                     Invoke(nameof(SpawnPathogen), delayBetweenPathogen);
                     tutorialProgress++;
+                    break;
                 }
                 case 1:{
                     if(chemokines >= 3){
                         
                     }
+                        break;
                 }
             }
         }
