@@ -81,7 +81,7 @@ public class Main : MonoBehaviour {
             DelayedRestart();
         }
 
-        if(scene.name == "Tutorial")
+        if(scene.name == "Tutorial"){
             switch (tutorialProgress) {
                 case 0:{
                     purchase1.SetActive(false);
