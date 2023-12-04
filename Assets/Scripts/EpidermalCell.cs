@@ -75,7 +75,7 @@ public class EpidermalCell : ImmuneCell {
 
     public override void Attacked(int amount) {
         if (mode == option.generate){
-            Main.chemokineIncrement(1);
+            Main.chemokineIncrement(amount);
         }
         health -= amount;
     }

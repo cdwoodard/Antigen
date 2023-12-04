@@ -13,7 +13,7 @@ public class MemoryTRange : MonoBehaviour {
                 Encyclopedia.addEntry(p.type, p.image);
             }
         } else {
-            print("memory hit by non-pathogen: " + otherGO.name);
+            //print("memory hit by non-pathogen: " + otherGO.name);
         }
     }
 
