@@ -5,8 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GoLevelTutorial : MonoBehaviour
 {
-    public void SwitchToTutorial()
+    public GameObject LevelOneButton;
+    // Start is called before the first frame update
+    void Start()
     {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Main.CompletedLevels.Contains("Tutorial"))
+        {
+            LevelOneButton.SetActive(true);
+        }
+
+    }
+
+    public void SwitchToTutorial()
+    {  
+
         SceneManager.LoadScene("Tutorial");
     }
 }
