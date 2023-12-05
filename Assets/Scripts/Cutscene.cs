@@ -8,13 +8,13 @@ public class Cutscene : MonoBehaviour {
     public Sprite image;
     
     public void TakeVaccine(){
-        SceneManager.LoadScene("Leveln+1");
+        Main.Advance();
         if (!Encyclopedia.encyclopedia.ContainsKey(type)){
             Encyclopedia.addEntry(type, image);
         }
     }
 
     public void RefuseVaccine(){
-        SceneManager.LoadScene("Leveln+1");
+        Main.Advance();
     }
 }

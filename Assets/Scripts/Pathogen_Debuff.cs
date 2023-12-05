@@ -39,7 +39,6 @@ public class Pathogen_Debuff : Pathogen {
             Vector2 diff = go.transform.position - position;
             float curDistance = diff.sqrMagnitude;
             if (curDistance < distance){
-                print("skaskdjaskldj");
                 ImmuneCell i = go.GetComponent<ImmuneCell>();
                 if(!i.slowed){
                     closest = go;

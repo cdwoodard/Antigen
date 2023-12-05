@@ -369,7 +369,7 @@ public class Main : MonoBehaviour {
         SceneManager.LoadScene(scene.name);
     }
 
-    public void Advance(){ //advance to the next level
+    public static void Advance(){ //advance to the next level
         Time.timeScale = 1; //prevent softlock when winning while paused
         // Reload the original scene
         // SceneManager.LoadScene("Leveln+1");

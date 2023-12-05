@@ -84,7 +84,7 @@ public class ImmuneCell : MonoBehaviour {
         //makes sure target exists
         if (target != null){
             Vector2 targetPos = target.transform.position;
-            if((targetPos - pos).sqrMagnitude > 1.7){
+            if((targetPos - pos).sqrMagnitude > 1.8){
                 //set step amount according to speed
                 var step = Time.deltaTime * speed;
                 pos = Vector2.MoveTowards(tempPos, targetPos, step);
