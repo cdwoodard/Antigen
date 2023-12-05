@@ -29,6 +29,7 @@ public class Encyclopedia : MonoBehaviour {
     public GameObject Aden_Image;
     public GameObject Aden_Text;
     public GameObject Aden_Resistance;
+    public GameObject Aden_Resistance2;
 
     // Myco Sprites
     public GameObject Myco_Image;
@@ -72,6 +73,15 @@ public class Encyclopedia : MonoBehaviour {
         E.SwitchSprite();
     }
 
+    public static void addEntry(string type, Sprite image, int strength){
+        encyclopedia.Add(type, new entry(image, strength));
+        E.SwitchSprite();
+    }
+
+    public static void SetStrength(string type, int strength){
+        encyclopedia[type] = new entry(encyclopedia[type].image, strength);
+    }
+
     public void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
@@ -101,6 +111,9 @@ public class Encyclopedia : MonoBehaviour {
                 Aden_Image.SetActive(true);
                 Aden_Text.SetActive(true);
                 Aden_Resistance.SetActive(true);
+                if(encyclopedia["Adenovirus"].strength > 1){
+                    Aden_Resistance2.SetActive(true);
+                }
             }
 
             if (encyclopedia.ContainsKey("Mycobacterium ulcerans"))

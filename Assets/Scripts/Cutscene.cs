@@ -10,8 +10,11 @@ public class Cutscene : MonoBehaviour {
     public void TakeVaccine(){
         Main.Advance();
         if (!Encyclopedia.encyclopedia.ContainsKey(type)){
-            Encyclopedia.addEntry(type, image);
+            Encyclopedia.addEntry(type, image, 2);
+        } else {
+            Encyclopedia.SetStrength(type, 2); //extra strength cause of vaccine
         }
+        
     }
 
     public void RefuseVaccine(){
