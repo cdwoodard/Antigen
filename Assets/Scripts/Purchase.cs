@@ -40,7 +40,7 @@ public class Purchase : MonoBehaviour {
                             Main.tutorialProgress++;
                         } else if (Main.tutorialProgress == 13 && type == tutorialCheck1){
                             Main.tutorialProgress++;
-                        } else if (Main.tutorialProgress == 19 && type == tutorialCheck2){
+                        } else if (Main.tutorialProgress == 20 && type == tutorialCheck2){
                             Main.tutorialProgress++;
                         }
                     }

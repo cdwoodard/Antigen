@@ -12,6 +12,9 @@ public class EpidermalCell : ImmuneCell {
 
     public GameObject duplicate;
 
+    public Sprite genSprite;
+    public Sprite repSprite;
+
     public int epidermalIndex;
 
     //two types of actions an ec can take
@@ -26,6 +29,7 @@ public class EpidermalCell : ImmuneCell {
         health = maxHealth; //overrides default health value
         epidermalIndex =  Main.epidermalCells.Count;
         Main.epidermalCells.Add(gameObject);
+        GetComponent<SpriteRenderer>().sprite = genSprite;
         mode = option.generate;
         GetComponent<SpriteRenderer>().color = Color.white;
     }
@@ -99,11 +103,11 @@ public class EpidermalCell : ImmuneCell {
 
         if (mode == option.reproduce){
             mode = option.generate;
-            GetComponent<SpriteRenderer>().color = Color.white;
+            GetComponent<SpriteRenderer>().sprite = genSprite;
         } else if (scene.name != "Tutorial"){
             mode = option.reproduce;
             reproduceStartTime = Time.time;
-            GetComponent<SpriteRenderer>().color = Color.blue;
+            GetComponent<SpriteRenderer>().sprite = repSprite;
         }
     }
 }

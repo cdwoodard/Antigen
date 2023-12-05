@@ -5,7 +5,7 @@ using TMPro;
 
 public class TutorialButton : MonoBehaviour {
     public void Click(){
-        if(Main.tutorialProgress == 17 || Main.tutorialProgress == 26){
+        if(Main.tutorialProgress == 17 || Main.tutorialProgress == 27){
             Main.tutorialProgress++;
         }
     }

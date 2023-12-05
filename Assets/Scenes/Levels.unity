@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelOneButton: {fileID: 304414213}
-  LevelTwoButton: {fileID: 0}
+  LevelTwoButton: {fileID: 2030378937}
 --- !u!1 &341077816
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,9 +586,8 @@ MonoBehaviour:
   maxWavePathogens: 5
   delayBetweenPathogen: 2
   gameRestartDelay: 1
-  cells:
-  - {fileID: 5898482464723096790, guid: ade9183b834b92740857ced5e9c11794, type: 3}
-  prices: 05000000
+  cells: []
+  prices: 
   WLPanel: {fileID: 0}
   LoseImage: {fileID: 0}
   WinImage: {fileID: 0}

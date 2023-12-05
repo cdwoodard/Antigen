@@ -2501,6 +2501,8 @@ MonoBehaviour:
   reproduceTime: 5
   reproduceStartTime: 0
   duplicate: {fileID: 8373069986593578917, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
+  genSprite: {fileID: 21300000, guid: 9631e6c31e2054fd9b96eeff61b504f0, type: 3}
+  repSprite: {fileID: 21300000, guid: 1884ab59c2bea41548bd5e7afe34cdce, type: 3}
   epidermalIndex: 0
   mode: 0
 --- !u!50 &1009314785
@@ -2677,6 +2679,8 @@ MonoBehaviour:
   reproduceTime: 5
   reproduceStartTime: 0
   duplicate: {fileID: 8373069986593578917, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
+  genSprite: {fileID: 21300000, guid: 9631e6c31e2054fd9b96eeff61b504f0, type: 3}
+  repSprite: {fileID: 21300000, guid: 1884ab59c2bea41548bd5e7afe34cdce, type: 3}
   epidermalIndex: 0
   mode: 0
 --- !u!50 &1013344282
@@ -2989,6 +2993,8 @@ MonoBehaviour:
   reproduceTime: 5
   reproduceStartTime: 0
   duplicate: {fileID: 8373069986593578917, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
+  genSprite: {fileID: 21300000, guid: 9631e6c31e2054fd9b96eeff61b504f0, type: 3}
+  repSprite: {fileID: 21300000, guid: 1884ab59c2bea41548bd5e7afe34cdce, type: 3}
   epidermalIndex: 0
   mode: 0
 --- !u!50 &1192082514
@@ -4769,6 +4775,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3795160777811656524, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
+      propertyPath: genSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9631e6c31e2054fd9b96eeff61b504f0, type: 3}
+    - target: {fileID: 3795160777811656524, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
+      propertyPath: repSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1884ab59c2bea41548bd5e7afe34cdce, type: 3}
     - target: {fileID: 8373069986593578917, guid: 13130a05384ccfd46a6e1071ce73892c, type: 3}
       propertyPath: m_Name
       value: Epidermal Cell1

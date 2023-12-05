@@ -17,8 +17,11 @@ public class Menu : MonoBehaviour
         
     }
 
-    public void SwitchToMenu()
-    { 
+    public void SwitchToMenu() { 
+        //roll back encyclopedia
+        if(Encyclopedia.encyclopediaBackup != null){
+            Encyclopedia.RollBack();
+        }
         SceneManager.LoadScene("Menu");
     }
 

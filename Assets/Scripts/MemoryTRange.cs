@@ -16,7 +16,7 @@ public class MemoryTRange : MonoBehaviour {
 
             //tutorial code
             Scene scene = SceneManager.GetActiveScene();
-            if(scene.name == "Tutorial" && Main.tutorialProgress == 21){
+            if(scene.name == "Tutorial" && Main.tutorialProgress == 22){
                 Main.tutorialProgress++;
             }
         } else {

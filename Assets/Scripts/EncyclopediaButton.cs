@@ -19,7 +19,7 @@ public class EncyclopediaButton : MonoBehaviour {
 
         //tutorial code
         Scene scene = SceneManager.GetActiveScene();
-        if(scene.name == "Tutorial" && Main.tutorialProgress == 23){
+        if(scene.name == "Tutorial" && Main.tutorialProgress == 24){
             Main.tutorialProgress++;
         }
     }

@@ -26,10 +26,6 @@ public class ContinueGame : MonoBehaviour
     }
 
     public void SwitchToSampleScene(){
-        //roll back encyclopedia
-        if(Encyclopedia.encyclopediaBackup != null){
-            Encyclopedia.RollBack();
-        }
         SceneManager.LoadScene(Main.IntendedLevel);
     }
 }

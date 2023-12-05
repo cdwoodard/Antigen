@@ -242,33 +242,39 @@ public class Main : MonoBehaviour {
                     text1.SetActive(false);
                     text1image.SetActive(false);
                     button1.SetActive(false);
-                    box4.SetActive(true);
                     purchase1.SetActive(true);
                     Time.timeScale = 1;
                     tutorialProgress++;
                     break;
                 }
-                //case 19 handled by Purchase.cs
-                case 20:{
+                case 19:{
+                    if(chemokines >= 5){
+                        box4.SetActive(true);
+                        tutorialProgress++;
+                    }
+                    break;
+                }
+                //case 20 handled by Purchase.cs
+                case 21:{
                     box4.SetActive(false);
                     arrow3.SetActive(true);
                     tutorialProgress++;
                     break;
                 }
-                //case 21 handled by MemoryTCell.cs (checks if new pathogen detected)
-                case 22:{
+                //case 22 handled by MemoryTRange.cs (checks if new pathogen detected)
+                case 23:{
                     arrow3.SetActive(false);
                     box5.SetActive(true);
                     tutorialProgress++;
                     break;
                 }
-                //case 23 handled by Encyclopedia.cs (checks if updated)
-                case 24:{
+                //case 24 handled by EncyclopediaButton.cs (checks if updated)
+                case 25:{
                     box5.SetActive(false);
                     tutorialProgress++;
                     break;
                 }
-                case 25:{
+                case 26:{
                     //when all the pathogens are dead, win game
                     int pNum = checkPathogenNum();
                     if(pNum == 0){
@@ -280,8 +286,8 @@ public class Main : MonoBehaviour {
                     }
                     break;
                 }
-                //case 26 handled by TutorialButton
-                case 27:{
+                //case 27 handled by TutorialButton
+                case 28:{
                     text2.SetActive(false);
                     text1image.SetActive(false);
                     button1.SetActive(false);
