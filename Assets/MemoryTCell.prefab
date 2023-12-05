@@ -170,5 +170,5 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   explodedSprite: {fileID: 0}
   doubleSize: {x: 0, y: 0, z: 0}
-  maxHealth: 20
+  maxHealth: 3
   go: {fileID: 1884761408475250420, guid: 5d96088e13a5cc842aa824e2a4b661c0, type: 3}

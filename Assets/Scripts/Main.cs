@@ -292,8 +292,8 @@ public class Main : MonoBehaviour {
                     text1image.SetActive(false);
                     button1.SetActive(false);
                     Time.timeScale = 1;
-                    DelayedAdvance(); //you won!
                     tutorialProgress++;
+                    Advance(); //you won!
                     break;
                 }
             }
